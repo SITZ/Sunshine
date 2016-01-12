@@ -6,18 +6,57 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
+    private String LOG_TAG = this.getClass().getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(LOG_TAG, Thread.currentThread().getStackTrace()[2].getMethodName());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+    }
+
+    @Override
+    protected void onStart() {
+        Log.i(LOG_TAG, Thread.currentThread().getStackTrace()[2].getMethodName());
+        super.onStart();
+    }
+
+    @Override
+    protected void onPause() {
+        Log.i(LOG_TAG, Thread.currentThread().getStackTrace()[2].getMethodName());
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        Log.i(LOG_TAG, Thread.currentThread().getStackTrace()[2].getMethodName());
+        super.onResume();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.i(LOG_TAG, Thread.currentThread().getStackTrace()[2].getMethodName());
+        super.onStop();
+    }
+
+    @Override
+    protected void onRestart() {
+        Log.i(LOG_TAG, Thread.currentThread().getStackTrace()[2].getMethodName());
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.i(LOG_TAG, Thread.currentThread().getStackTrace()[2].getMethodName());
+        super.onDestroy();
     }
 
     @Override
